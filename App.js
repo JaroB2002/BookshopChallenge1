@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Button } from 'react-native';
 
+import Buttons from './components/Buttons';
 import CourseTile from './components/CourseTile';
 
 export default function App() {
@@ -13,12 +14,22 @@ export default function App() {
         <CourseTile title="Book title 2" subtitle="by some other dude"/>
         <CourseTile title="Book title 3" subtitle="by Jane Doe"/>
         <CourseTile title="Book title 4" subtitle="By John Doe"/>
+<Button title="Test123test" color="red"></Button>
+<Image source={{uri: ''}} style={{width: 60, height: 60}} />  
+        <TouchableOpacity>
+      <View style={StyleSheet.button}>
+<Text></Text>
+      </View>
+    </TouchableOpacity>
 
       <StatusBar style="auto" />
       </View>
     </View>
   );
 }
+
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -39,5 +50,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'stretch',
   },
+
+
 
 });
