@@ -1,30 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity, Button } from 'react-native';
+import cart from "./assets/shopping-cart.png"
 
-import Buttons from './components/Buttons';
 import CourseTile from './components/CourseTile';
+import Buttons from './components/Buttons';
+
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <View style={styles.header}>
       <Text style={styles.heading1}>Courses</Text>
+      <Image
+        style={styles.cart}
+        source={cart}
+      />
+      </View>
       <View style={styles.tilesContainer}>
 
         <CourseTile title="Book title 1" subtitle="by Some Random dude" />
+        <Buttons title="READ"/>
         <CourseTile title="Book title 2" subtitle="by some other dude"/>
         <CourseTile title="Book title 3" subtitle="by Jane Doe"/>
         <CourseTile title="Book title 4" subtitle="By John Doe"/>
-<Button title="Test123test" color="red"></Button>
-<Image source={{uri: ''}} style={{width: 60, height: 60}} />  
-        <TouchableOpacity>
-      <View style={StyleSheet.button}>
-<Text></Text>
+        
       </View>
-    </TouchableOpacity>
+      </View>
 
-      <StatusBar style="auto" />
-      </View>
-    </View>
+      
   );
 }
 
@@ -40,7 +43,6 @@ const styles = StyleSheet.create({
   heading1:{
     fontSize: 26,
     margin: 0,
-    marginLeft: 15,
   },
   tilesContainer: {
     flex: 1,
@@ -50,7 +52,20 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'stretch',
   },
+  button:{
+    width: 50,
+    height:50,
+    
+  },
 
+cart:{
+  width: 20,
+  height: 20,
+},
 
-
+header:{
+  flexDirection: 'row',
+  display:"flex",
+  justifyContent: 'space-between',
+}
 });
